@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .shadow-gray-400 {
+        box-shadow: 6px 6px 0 theme('colors.gray.300');
+    }
+    .shadow-gray-600 {
+        box-shadow: 6px 6px 0 theme('colors.gray.600');
+    }
+    .shadow-gray-700 {
+        box-shadow: 6px 6px 0 theme('colors.gray.700');
+    }
+
+    .hover_boutton {
+        position: relative; /* Assurez-vous que le parent a une position relative */
+        overflow: hidden; 
+        /* Évite que le pseudo-élément dépasse le bouton */
+    }
+
+    .hover_boutton::before {
+        @apply content-[''] absolute w-full h-full bg-blue-300 top-0 left-0 scale-x-0 transition-transform ease-in-out origin-left duration-500;
+    }
+
+    .hover_boutton:hover::before {
+        @apply scale-x-100; /* Scale 100% sur hover */
+    }
+
+    .hover_boutton:hover {
+        @apply text-white; /* Changez la couleur du texte au survol */
+    }
+    
+    .scrollbar::-webkit-scrollbar {
+    width: 8px; /* Ajuste la largeur de la barre */
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(153, 158, 158, 0.604); /* Couleur de la barre */
+    border-radius: 10px; /* Arrondit la barre */
+    }
+
+    .scrollbar::-webkit-scrollbar-track {
+    background: transparent; /* Fond transparent pour le track */
+    }
+
+    .scrollbar {
+    overflow-y: auto;
+ /* Positionne la scrollbar à droite avec 0% d'espacement */
+    }
+
+}
