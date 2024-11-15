@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';  // Import de motion pour l'animation
 import Myannee from '../annee/anneeUniv';
+import AffichageNote from '../Note/NoteEtudiant'
 
 const NavigationCard = ({ title, description, buttonText, onClick }) => (
   <div className="w-full bg-white dark:bg-gray-600  rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6">
@@ -66,6 +66,7 @@ function AffichageNavigation() {
           <Myannee />
         </motion.div>
       )}
+      <AffichageNote/>
     </div>
   );
 }
